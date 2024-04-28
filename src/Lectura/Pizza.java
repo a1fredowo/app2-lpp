@@ -44,6 +44,9 @@ public class Pizza {
     }
 
     public void setPizzaId(double pizzaId) {
+        if (pizzaId <= 0) {
+            throw new IllegalArgumentException("El ID de la pizza no puede ser cero o negativo");
+        }
         this.pizzaId = pizzaId;
     }
 
@@ -52,6 +55,9 @@ public class Pizza {
     }
 
     public void setOrderId(double orderId) {
+        if (orderId <= 0) {
+            throw new IllegalArgumentException("El ID del pedido no puede ser cero o negativo");
+        }
         this.orderId = orderId;
     }
 
@@ -61,7 +67,6 @@ public class Pizza {
 
     public void setPizzaNameId(String pizzaNameId) {
         this.pizzaNameId = pizzaNameId;
-
     }
 
     public double getQuantity() {
@@ -69,6 +74,9 @@ public class Pizza {
     }
 
     public void setQuantity(double quantity) {
+        if (quantity <= 0) {
+            throw new IllegalArgumentException("La cantidad de pizzas no puede ser cero o negativa");
+        }
         this.quantity = quantity;
     }
 
@@ -93,6 +101,9 @@ public class Pizza {
     }
 
     public void setUnitPrice(double unitPrice) {
+        if (unitPrice <= 0) {
+            throw new IllegalArgumentException("El precio unitario de la pizza no puede ser cero o negativo");
+        }
         this.unitPrice = unitPrice;
     }
 
@@ -101,6 +112,9 @@ public class Pizza {
     }
 
     public void setTotalPrice(double totalPrice) {
+        if (totalPrice <= 0) {
+            throw new IllegalArgumentException("El precio total de la pizza no puede ser cero o negativo");
+        }
         this.totalPrice = totalPrice;
     }
 

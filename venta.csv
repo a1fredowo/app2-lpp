@@ -1,0 +1,12 @@
+pizza_id,order_id,pizza_name_id,quantity,order_date,order_time,unit_price,total_price,pizza_size,pizza_category,pizza_ingredients,pizza_name
+1.0,1.0,hawaiian_m,3.0,1/1/2015,11:38:36,13.25,39.75,M,Classic,"Sliced Ham, Pineapple, Mozzarella Cheese",The Hawaiian Pizza
+2.0,2.0,classic_dlx_m,2.0,1/1/2015,11:57:40,16.0,32.0,M,Classic,"Pepperoni, Mushrooms, Red Onions, Red Peppers, Bacon",The Classic Deluxe Pizza
+3.0,2.0,five_cheese_l,2.0,1/1/2015,11:58:40,18.5,37.0,L,Veggie,"Mozzarella Cheese, Provolone Cheese, Smoked Gouda Cheese, Romano Cheese, Blue Cheese, Garlic",The Five Cheese Pizza
+4.0,3.0,five_cheese_l,4.0,2/1/2015,12:58:40,18.5,74.0,L,Veggie,"Mozzarella Cheese, Provolone Cheese, Smoked Gouda Cheese, Romano Cheese, Blue Cheese, Garlic",The Five Cheese Pizza
+5.0,3.0,classic_dlx_m,1.0,2/1/2015,12:57:40,16.0,16.0,M,Classic,"Pepperoni, Mushrooms, Red Onions, Red Peppers, Bacon",The Classic Deluxe Pizza
+6.0,4.0,hawaiian_m,2.0,2/1/2015,13:38:32,13.25,26.5,M,Classic,"Sliced Ham, Pineapple, Mozzarella Cheese",The Hawaiian Pizza
+7.0,4.0,classic_dlx_m,1.0,2/1/2015,13:38:32,16.0,16.0,M,Classic,"Pepperoni, Mushrooms, Red Onions, Red Peppers, Bacon",The Classic Deluxe Pizza
+8.0,5.0,hawaiian_m,3.0,3/1/2015,11:38:36,13.25,39.75,M,Classic,"Sliced Ham, Pineapple, Mozzarella Cheese",The Hawaiian Pizza
+9.0,6.0,classic_dlx_m,2.0,3/1/2015,11:57:40,16.0,32.0,M,Classic,"Pepperoni, Mushrooms, Red Onions, Red Peppers, Bacon",The Classic Deluxe Pizza
+10.0,6.0,five_cheese_l,2.0,3/1/2015,11:58:40,18.5,37.0,L,Veggie,"Mozzarella Cheese, Provolone Cheese, Smoked Gouda Cheese, Romano Cheese, Blue Cheese, Garlic",The Five Cheese Pizza
+11.0,7.0,five_cheese_l,4.0,3/1/2015,15:58:30,18.5,74.0,L,Veggie,"Mozzarella Cheese, Provolone Cheese, Smoked Gouda Cheese, Romano Cheese, Blue Cheese, Garlic",The Five Cheese Pizza

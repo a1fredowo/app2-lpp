@@ -82,7 +82,7 @@ public class App2 {
                 String pizzasPorCategoria = hpMetrica.calcular(pizzas);
                 System.out.println(pizzasPorCategoria);
             } else {
-                System.out.println("Métrica no válida. Las métricas disponibles son: pms, pls");
+                System.out.println("Métrica no válida.");
             }
         }
     }
