@@ -1,9 +1,8 @@
-App 2 del ramo de Lenguajes y paradigmas de programación  
-PD: El codigo se corre con estos comandos: 
-javac -classpath src src/Main/App2.java  
+App 2 - Lenguajes y paradigmas de programación  
+Integrantes:  
+-Alfredo Hernández  
+-Simón Jímenez  
   
-Despues de que se compila:  
-java -classpath src Main.App2 ventas.csv pms pls...  
-
-Despues para limpiar los ejecutables:  
-find . -name "*.class" -type f -delete  
+El codigo se compila y ejecuta sin problema con los comandos:  
+javac -classpath src src/Main/App2.java  
+java -classpath src Main.App2 ventas.csv pms pls ...  
