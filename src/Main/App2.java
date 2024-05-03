@@ -1,41 +1,42 @@
 package Main;
 
+// Importación de clases necesarias
 import Lectura.Pizza;
-import Metrica.APD;
-import Metrica.DLS;
-import Metrica.DMS;
-import Metrica.DMSP;
-import Metrica.MetricaBase;
-import Metrica.PLS;
-import Metrica.PMS;
-import Metrica.DLSP;
-import Metrica.APO;
-import Metrica.IMS;
-import Metrica.HP;
+import Metrica.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class App2 {
     public static void main(String[] args) {
+        // Verificamos de que se hayan proporcionado al menos dos argumentos en la línea de comandos
         if (args.length < 2) {
             System.out.println("Uso: java App2 <archivo_CSV> <métrica1> <métrica2> ... <métricaN>");
             return;
         }
 
+        // Obtenemos la ruta del archivo CSV a partir del primer argumento dado
         String filePath = args[0];
         
+        // Creamos una lista para almacenar las métricas especificadas en la línea de comandos
         List<String> metricas = new ArrayList<>();
         for (int i = 1; i < args.length; i++) {
             metricas.add(args[i]);
         }
 
+        // Iteramos sobre cada métrica especificada en la lista
         for (String metrica : metricas) {
+            // Selección de la métrica a ejecutar según el argumento dado
             if (metrica.equals("pms")) {
+                // Obtenemos todas las pizzas del archivo CSV
                 List<Pizza> pizzas = Lectura.Pizza.getAllPizzas(filePath);
+                // Creamos una instancia de la métrica PMS
                 MetricaBase pmsMetrica = new PMS();
+                // Ejecutamos el cálculo de la métrica
                 String pizzaMasVendida = pmsMetrica.calcular(pizzas);
+                // Imprimimos el resultado de la métrica en la consola
                 System.out.println("La pizza más vendida es: " + pizzaMasVendida);
+            // Asi para todas las metricas
             } else if (metrica.equals("pls")) {
                 List<Pizza> pizzas = Lectura.Pizza.getAllPizzas(filePath);
                 MetricaBase plsMetrica = new PLS();

@@ -36,7 +36,10 @@ public class DMS extends MetricaBase {
             }
         }
 
+        // Formatear el valor de maxVenta a 2 decimales
+        String maxVentaFormatted = String.format("%.2f", maxVenta);
+
         // Devolver la fecha con más ventas junto a la cantidad de dinero recaudado
-        return "Fecha con más ventas: " + fechaMasVentas + ", Cantidad de dinero recaudado: $" + maxVenta;
+        return "Fecha con más ventas: " + fechaMasVentas + ", Cantidad de dinero recaudado: $" + maxVentaFormatted;
     }
 }

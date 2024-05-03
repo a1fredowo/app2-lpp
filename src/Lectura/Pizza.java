@@ -18,7 +18,7 @@ public class Pizza {
     private String pizzaIngredients;
     private String pizzaName;
 
-    // Constructor vacío
+    // Constructor vacío para inicializar los atributos
     public Pizza() {
     }
 
@@ -43,6 +43,7 @@ public class Pizza {
         return pizzaId;
     }
 
+    //Utilizamos excepciones para validar los valores de los atributos
     public void setPizzaId(double pizzaId) {
         if (pizzaId <= 0) {
             throw new IllegalArgumentException("El ID de la pizza no puede ser cero o negativo");
@@ -66,6 +67,9 @@ public class Pizza {
     }
 
     public void setPizzaNameId(String pizzaNameId) {
+        if (pizzaNameId == null || pizzaNameId.isEmpty()) {
+            throw new IllegalArgumentException("El ID del nombre de la pizza no puede ser nulo o vacío");
+        }
         this.pizzaNameId = pizzaNameId;
     }
 
@@ -85,6 +89,9 @@ public class Pizza {
     }
 
     public void setOrderDate(String orderDate) {
+        if (orderDate == null || orderDate.isEmpty()) {
+            throw new IllegalArgumentException("La fecha del pedido no puede ser nula o vacía");
+        }
         this.orderDate = orderDate;
     }
 
@@ -93,6 +100,9 @@ public class Pizza {
     }
 
     public void setOrderTime(String orderTime) {
+        if (orderTime == null || orderTime.isEmpty()) {
+            throw new IllegalArgumentException("La hora del pedido no puede ser nula o vacía");
+        }
         this.orderTime = orderTime;
     }
 
@@ -123,6 +133,9 @@ public class Pizza {
     }
 
     public void setPizzaSize(String pizzaSize) {
+        if (pizzaSize == null || pizzaSize.isEmpty()) {
+            throw new IllegalArgumentException("El tamaño de la pizza no puede ser nulo o vacío");
+        }
         this.pizzaSize = pizzaSize;
     }
 
@@ -131,6 +144,9 @@ public class Pizza {
     }
 
     public void setPizzaCategory(String pizzaCategory) {
+        if (pizzaCategory == null || pizzaCategory.isEmpty()) {
+            throw new IllegalArgumentException("La categoría de la pizza no puede ser nula o vacía");
+        }
         this.pizzaCategory = pizzaCategory;
     }
 
@@ -139,6 +155,9 @@ public class Pizza {
     }
 
     public void setPizzaIngredients(String pizzaIngredients) {
+        if (pizzaIngredients == null || pizzaIngredients.isEmpty()) {
+            throw new IllegalArgumentException("Los ingredientes de la pizza no pueden ser nulos o vacíos");
+        }
         this.pizzaIngredients = pizzaIngredients;
     }
 
@@ -147,22 +166,31 @@ public class Pizza {
     }
 
     public void setPizzaName(String pizzaName) {
+        if (pizzaName == null || pizzaName.isEmpty()) {
+            throw new IllegalArgumentException("El nombre de la pizza no puede ser nulo o vacío");
+        }
         this.pizzaName = pizzaName;
     }
 
     public static List<Pizza> getAllPizzas(String filePath) {
+        // Lista para almacenar todas las pizzas del archivo CSV
         List<Pizza> pizzas = new ArrayList<>();
+        // Creamos un objeto CSVReader para leer el archivo CSV
         CSVReader csvReader = new CSVReader(filePath);
         try {
+            // Leemos todos los registros del archivo CSV
             List<String[]> records = csvReader.readCSV();
-            // Saltar la primera línea del archivo CSV (encabezados)
+            // Indicador para saltar la primera línea del archivo CSV que contiene los encabezados
             boolean firstLine = true;
+            // Iteramos sobre cada registro del archivo CSV
             for (String[] values : records) {
                 if (firstLine) {
                     firstLine = false;
-                    continue; // Saltar esta línea
+                    continue;
                 }
+                // Creamos un objeto Pizza para almacenar los datos de la línea actual
                 Pizza pizza = new Pizza();
+                // Configuramos los atributos de la pizza con los valores del registro actual
                 pizza.setPizzaId(Double.parseDouble(values[0].trim()));
                 pizza.setOrderId(Double.parseDouble(values[1].trim()));
                 pizza.setPizzaNameId(values[2].trim());
@@ -175,11 +203,14 @@ public class Pizza {
                 pizza.setPizzaCategory(values[9].trim());
                 pizza.setPizzaIngredients(values[10].trim());
                 pizza.setPizzaName(values[11].trim());
+                // Agregamos la pizza creada a la lista de pizzas
                 pizzas.add(pizza);
             }
         } catch (IOException e) {
+            // Excepción de entrada/salida (IOException) por si ocurre un error al leer el archivo CSV
             e.printStackTrace();
         }
+        // Devolvemos la lista de pizzas obtenidas del archivo CSV
         return pizzas;
     }
 }

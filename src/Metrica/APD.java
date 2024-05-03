@@ -9,10 +9,10 @@ public class APD extends MetricaBase {
 
     @Override
     public String calcular(List<Pizza> pizzas) {
-        // Mapa para mantener la cantidad de pizzas por día
+        // Usamos un mapa para almacenar la cantidad de pizzas vendidas por día
         Map<String, Integer> pizzasPorDia = new HashMap<>();
 
-        // Calcular la cantidad de pizzas por día
+        // Calculamos la cantidad de pizzas por día
         for (Pizza pizza : pizzas) {
             String fecha = pizza.getOrderDate();
             int cantidadPizzas = (int) pizza.getQuantity(); // Convertimos la cantidad a entero
@@ -34,7 +34,7 @@ public class APD extends MetricaBase {
         // Calcular el promedio de pizzas por día
         double promedioPizzasPorDia = (double) totalPizzas / totalDias;
 
-        // Devolver el promedio de pizzas por día con dos decimales de precisión
+        // Devolver el promedio de pizzas por día
         return String.format("Promedio de pizzas por día: %.2f", promedioPizzasPorDia);
     }
 }

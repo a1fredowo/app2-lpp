@@ -13,7 +13,7 @@ public class APO extends MetricaBase {
         Map<Double, Double> cantidadPorOrden = new HashMap<>();
         Map<Double, Integer> cantidadDeOrdenes = new HashMap<>();
 
-        // Calcular la cantidad de pizzas por orden y el total de órdenes
+        // Calculamos la cantidad de pizzas por orden y el total de órdenes
         for (Pizza pizza : pizzas) {
             double orderID = pizza.getOrderId();
             double cantidad = pizza.getQuantity();
@@ -26,7 +26,7 @@ public class APO extends MetricaBase {
             }
         }
 
-        // Calcular el promedio de pizzas por orden
+        // Calculamos el promedio de pizzas por orden
         double totalPizzas = 0;
         int totalOrdenes = cantidadDeOrdenes.size(); // Total de órdenes distintas
         for (double cantidad : cantidadPorOrden.values()) {
@@ -34,7 +34,6 @@ public class APO extends MetricaBase {
         }
 
         double promedio = totalPizzas / totalOrdenes;
-        // Redondear el promedio a 2 decimales
         promedio = Math.round(promedio * 100.0) / 100.0;
 
         return "El promedio de pizzas por orden es: " + promedio;
